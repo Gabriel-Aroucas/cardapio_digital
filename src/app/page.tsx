@@ -1,6 +1,6 @@
 import './Page/page.css'
-//import Modal from '@/components/modal/Modal'
 import Header from '@/components/header/Header'
+import './Global _style/globals.css'
 export default function Home() {
   return(
     <section>

@@ -8,7 +8,8 @@ const Header = ({pagina}:pagina_type) => {
   return (
     <header>
       <span className='pagina'>{pagina}</span>
-      <Shopping_cart />
+      <span className='Shopping_cart_icon'><Shopping_cart /></span>
+      
     </header>
   )
 }
