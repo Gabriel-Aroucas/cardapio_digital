@@ -7,7 +7,9 @@
   padding: 15px;
   text-align: end;
   border: 5px solid transparent;
-
+  span:nth-child(1){
+    color: #eaeaea;
+  }
   .content {
     padding: 20px;
     display: block;

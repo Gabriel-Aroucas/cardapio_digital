@@ -24,7 +24,7 @@ const Shopping_cart = () => {
         <div className="items">
           <ul>
             <li>
-              <strong>sorvete</strong> - <span>R$ 9,90</span> <span>2</span>{" "}
+              <strong>sorvete</strong> - <span>R$ 9,90</span> <span>2</span>
               <span className="remove_button">x</span>
             </li>
           </ul>

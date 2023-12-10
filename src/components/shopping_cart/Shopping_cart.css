@@ -8,6 +8,9 @@
   text-align: end;
   border: 5px solid transparent;
 }
+.shopping_cart span:nth-child(1) {
+  color: #eaeaea;
+}
 .shopping_cart .content {
   padding: 20px;
   display: block;
