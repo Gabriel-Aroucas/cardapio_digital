@@ -1,7 +1,8 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./header.css";
 import Shopping_cart from "../shopping_cart/Shopping_cart";
+import Link from "next/link";
 interface pagina_type {
   pagina: string;
 }
@@ -53,7 +54,9 @@ const Header = ({ pagina }: pagina_type) => {
 
     }
   };
+
   return (
+    
     <header>
       <div
         className="hamburguer_menu"
@@ -76,7 +79,7 @@ const Header = ({ pagina }: pagina_type) => {
         </div>
         <div className="menu_content">
           <ul>
-            <li>Início</li>
+            <Link href={"/"}><li>Início</li></Link>
             <li>Cardápio</li>
             <li>Sobre</li>
             <li>Contato</li>

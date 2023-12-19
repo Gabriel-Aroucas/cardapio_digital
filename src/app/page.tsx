@@ -61,7 +61,6 @@ export default function Home() {
   return (
     <section>
       {loading == true && <Loader />}
-      <Header pagina="Início" />
       <div className="container">
         <img src="https://placehold.co/150x150" alt="business logo" />
         <div className="info">

@@ -1,3 +1,7 @@
+export const metadata ={
+  title:"teste",
+  description:"teste ok"
+}
 
 const menu = () => {
   return (
