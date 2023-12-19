@@ -1,12 +1,13 @@
 export const metadata ={
-  title:"teste",
-  description:"teste ok"
+  title:"menu",
 }
 
 const menu = () => {
   return (
-    <div>menu</div>
-  )
-}
+    <>
+      <div>menu</div>
+    </>
+  );
+};
 
-export default menu
+export default menu;
