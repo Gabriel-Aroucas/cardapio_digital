@@ -1,9 +1,10 @@
 "use client";
-import "./Page/page.css";
+import "./Global _style/page.css";
 import Header from "@/components/header/Header";
 import "./Global _style/globals.css";
 import Loader from "@/components/Loader/Loader";
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -27,30 +28,27 @@ export default function Home() {
   const full_load_page_check = async () => {
     await fetch("/").then(() => {
       setLoading(false);
-      
+      funcionamento()
     });
   };
   useEffect(() => {
     full_load_page_check();
-  }, []);
+  });
 
-  setInterval(() => {
-    funcionamento();
-  }, 100);
 
   const mudar_cor_span_funcionamento = (cor:string)=>{
-    const span = document.querySelector(".status") as HTMLSpanElement;
-    span.style.backgroundColor=cor;
-    span.style.color="white";
-    span.style.padding='0.1rem';
-    span.style.borderRadius='2px'
+    const span_syle = document.querySelector(".status") as HTMLSpanElement;
+    span_syle.style.backgroundColor=cor;
+    span_syle.style.color="white";
+    span_syle.style.padding='0.1rem';
+    span_syle.style.borderRadius='2px'
     
   }
   const funcionamento = () => {
     if (converter_dias_da_semana[dia] == "Segunda") {
       set_Status(false);
       mudar_cor_span_funcionamento("red")
-    } else if ((hora <= 6 && minutos <= 59) || (hora >= 23 && minutos >= 0)) {
+    } else if ((hora <= 17 && minutos <= 59) || (hora >= 22 && minutos >= 59)) {
       set_Status(false);
       mudar_cor_span_funcionamento("red")
 
@@ -76,7 +74,7 @@ export default function Home() {
           </p>
         </div>
         <div className="buttons">
-          <button type="button"> Cardápio</button>
+          <Link href={"/menu"}> <button type="button"> Cardápio</button></Link>
           <button type="button" disabled>
             {" "}
             Reservar uma mesa
