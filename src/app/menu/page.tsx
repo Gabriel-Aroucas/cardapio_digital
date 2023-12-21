@@ -1,7 +1,7 @@
 import Header from "@/components/header/Header";
 
 export const metadata ={
-  title:"menu",
+  title:"Menu",
 }
 
 const menu = () => {
