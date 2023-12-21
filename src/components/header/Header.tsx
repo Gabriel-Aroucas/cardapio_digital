@@ -1,12 +1,10 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./header.css";
 import Shopping_cart from "../shopping_cart/Shopping_cart";
 import Link from "next/link";
-interface pagina_type {
-  pagina: string;
-}
-const Header = ({ pagina }: pagina_type) => {
+
+const Header = ({title}:any) => {
   const [handle_state, set_handle_state] = useState(0);
   const [handle_menu_state, set_handle_menu_state] = useState(0);
 
@@ -43,20 +41,21 @@ const Header = ({ pagina }: pagina_type) => {
     effect_bars();
     set_handle_menu_state(handle_menu_state + 1);
     const menu_opened = document.querySelector(".menu_opened") as HTMLElement;
-    const hamburguer_menu = document.querySelector(".hamburguer_menu") as HTMLDivElement;
+    const hamburguer_menu = document.querySelector(
+      ".hamburguer_menu"
+    ) as HTMLDivElement;
 
     if (handle_menu_state % 2 == 0) {
       menu_opened.style.transform = "scale(100%)";
-      hamburguer_menu.style.left='85%';
+      hamburguer_menu.style.left = "85%";
     } else {
       menu_opened.style.transform = "scale(0%)";
-      hamburguer_menu.style.left='0';
-
+      hamburguer_menu.style.left = "0";
     }
   };
 
+
   return (
-    
     <header>
       <div
         className="hamburguer_menu"
@@ -68,7 +67,7 @@ const Header = ({ pagina }: pagina_type) => {
         <span id="bars_two"></span>
         <span id="bars_tree"></span>
       </div>
-      <span className="pagina">{pagina}</span>
+      <span className="pagina">{title}</span>
       <span className="Shopping_cart_icon">
         <Shopping_cart />
       </span>
@@ -79,13 +78,19 @@ const Header = ({ pagina }: pagina_type) => {
         </div>
         <div className="menu_content">
           <ul>
-            <Link href={"/"}><li>Início</li></Link>
+            <Link href={"/"}>
+              <li>Início</li>
+            </Link>
             <li>Cardápio</li>
             <li>Sobre</li>
             <li>Contato</li>
-            <li onClick={() => {
-          handle_menu_open();
-        }}>Voltar</li>
+            <li
+              onClick={() => {
+                handle_menu_open();
+              }}
+            >
+              Voltar
+            </li>
           </ul>
         </div>
       </section>

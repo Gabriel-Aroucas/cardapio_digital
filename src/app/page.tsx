@@ -1,6 +1,6 @@
 "use client";
+import Header from "@/components/header/Header"
 import "./Global _style/page.css";
-import Header from "@/components/header/Header";
 import "./Global _style/globals.css";
 import Loader from "@/components/Loader/Loader";
 import { useEffect, useRef, useState } from "react";
@@ -59,6 +59,8 @@ export default function Home() {
     }
   };
   return (
+    <>
+    <Header title="Início" />
     <section>
       {loading == true && <Loader />}
       <div className="container">
@@ -84,5 +86,7 @@ export default function Home() {
         </div>
       </div>
     </section>
+    </>
+
   );
 }
