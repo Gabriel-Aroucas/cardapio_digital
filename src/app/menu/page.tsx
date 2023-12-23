@@ -6,7 +6,7 @@ export const metadata ={
 
 const menu = () => {
 
-  
+
   return (
     <>
     <Header title="Menu" />

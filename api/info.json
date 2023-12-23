@@ -1,0 +1,24 @@
+{
+  "business_info": {
+    "id": 1,
+    "name": "Lanchoco",
+    "slogan": "Prazer em te servir",
+    "address": "rua f ficticio Nº 502",
+    "tel": "Tel: 9999999999"
+  },
+  "items": [
+    {
+      "id": 1,
+      "product_1": "Product_1",
+      "content": "bread, meat, salad and cheddar cheese",
+      "price": 11.9
+    },
+    {
+      "id": 2,
+      "product_2": "Product_2",
+      "content": "bread, two meat, salad and cheddar cheese",
+      "price": 12.9
+    }
+  ],
+  "author": { "name": "Gabriel Aroucas" }
+}

@@ -5,8 +5,10 @@ import "./Global _style/globals.css";
 import Loader from "@/components/Loader/Loader";
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import json from "../../api/info.json"
 
 export default function Home() {
+  console.log(json)
   const [loading, setLoading] = useState(true);
   const [status, set_Status] = useState(false);
   const [data_atual, set_data_atual] = useState("data");
@@ -58,6 +60,8 @@ export default function Home() {
 
     }
   };
+
+  
   return (
     <>
     <Header title="Início" />
@@ -66,10 +70,10 @@ export default function Home() {
       <div className="container">
         <img src="https://placehold.co/150x150" alt="business logo" />
         <div className="info">
-          <h1>Lanchocho</h1>
-          <i>prazer em te servir</i>
-          <p>Endereço: rua f ficticio Nº 502</p>
-          <p>Tel: 9999999999</p>
+          <h1>{json.business_info.name}</h1>
+          <i>{json.business_info.slogan}</i>
+          <p>{json.business_info.address}</p>
+          <p>{json.business_info.tel}</p>
           <p>
             Status de funcionamento: <span className="status">{status == true ? "Aberto" : "Fechado"}</span>
           </p>
