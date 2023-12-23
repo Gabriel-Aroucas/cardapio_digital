@@ -9,7 +9,6 @@ header {
   justify-content: center;
   background-color: #101010;
 
-
   .pagina {
     border-radius: 3pc;
     padding: 5px 30px;
@@ -71,24 +70,28 @@ header {
       padding: 20px;
       text-align: center;
     }
-    .logo{
+    .logo {
       width: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
-      img{
+      img {
         border-radius: 50%;
         border: 3px dotted #eaeaea;
       }
     }
     .menu_content {
+      a{
+        text-decoration: none;
+        color: unset;
+      }
       ul {
         li {
           list-style: none;
           padding: 10px 40px;
           margin: 5px 0;
           border: 1px dotted #eaeaea;
-//          background-color: rgba(0, 0, 0, 0.5);
+          //          background-color: rgba(0, 0, 0, 0.5);
         }
       }
     }

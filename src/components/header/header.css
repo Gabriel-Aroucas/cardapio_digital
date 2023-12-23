@@ -75,6 +75,10 @@ header .menu_opened .logo img {
   border-radius: 50%;
   border: 3px dotted #eaeaea;
 }
+header .menu_opened .menu_content a {
+  text-decoration: none;
+  color: unset;
+}
 header .menu_opened .menu_content ul li {
   list-style: none;
   padding: 10px 40px;
