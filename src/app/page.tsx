@@ -1,7 +1,7 @@
 "use client";
 import Header from "@/components/header/Header"
-import "./Global _style/page.css";
-import "./Global _style/globals.css";
+import "./globalcss/page.css";
+import "./globalcss/globals.css";
 import Loader from "@/components/Loader/Loader";
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";

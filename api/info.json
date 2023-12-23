@@ -9,14 +9,26 @@
   "items": [
     {
       "id": 1,
-      "product_1": "Product_1",
+      "product": "Product_1",
       "content": "bread, meat, salad and cheddar cheese",
       "price": 11.9
     },
     {
       "id": 2,
-      "product_2": "Product_2",
+      "product": "Product_2",
       "content": "bread, two meat, salad and cheddar cheese",
+      "price": 12.9
+    },
+    {
+      "id": 3,
+      "product": "Product_3",
+      "content": "bread, tree meat, and cheese ",
+      "price": 12.9
+    },
+    {
+      "id": 4,
+      "product": "Product_4",
+      "content": "bread, for meat, salad and special cream",
       "price": 12.9
     }
   ],
