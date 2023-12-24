@@ -1,32 +1,49 @@
 "use client";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { ProductContext } from "@/app/menu/page";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./Shopping_cart.css";
 
 const Shopping_cart = () => {
-  const handle_open_shopping_cart =()=>{
+  const product_info = useContext(ProductContext);
+  console.log(product_info);
+
+  const handle_open_shopping_cart = () => {
     const content = document.querySelector(".content") as HTMLElement;
-    content.style.transform="scale(100%)"
-  }
-  const handle_close_shopping_cart = ()=>{
+    content.style.transform = "scale(100%)";
+  };
+  const handle_close_shopping_cart = () => {
     const content = document.querySelector(".content") as HTMLElement;
-    content.style.transform="scale(0%)"
-  }
+    content.style.transform = "scale(0%)";
+  };
+
   return (
     <section className="shopping_cart">
-      <span onClick={()=>{handle_open_shopping_cart()}}>
+      <span
+        onClick={() => {
+          handle_open_shopping_cart();
+        }}
+      >
         <FontAwesomeIcon icon={faShoppingCart} />
       </span>
       <div className="content">
-        <span className="close_shopping_cart" onClick={()=>{handle_close_shopping_cart()}}>x</span>
+        <span
+          className="close_shopping_cart"
+          onClick={() => {
+            handle_close_shopping_cart();
+          }}
+        >
+          x
+        </span>
         <h1>Carrinho de compras</h1>
         <div className="items">
           <ul>
-            <li>
-              <strong>sorvete</strong> - <span>R$ 9,90</span> <span>2</span>
-              <span className="remove_button">x</span>
-            </li>
+                <li>
+                  <strong>teste</strong> -{" "}
+                  <span>R$ 10</span> <span>2</span>
+                  <span className="remove_button">x</span>
+                </li>
           </ul>
           <div className="price">
             <p>
