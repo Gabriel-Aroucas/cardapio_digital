@@ -61,10 +61,11 @@ export default function Home() {
     }
   };
 
-  
+  const main_title = "Início";
   return (
     <>
-    <Header title="Início" />
+    {document.title= main_title}
+    <Header title={main_title} />
     <section>
       {loading == true && <Loader />}
       <div className="container">

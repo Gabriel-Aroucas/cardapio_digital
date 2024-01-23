@@ -7,7 +7,6 @@ import "./Shopping_cart.css";
 
 const Shopping_cart = () => {
   const product_info = useContext(ProductContext);
-  console.log(product_info);
 
   const handle_open_shopping_cart = () => {
     const content = document.querySelector(".content") as HTMLElement;
@@ -21,7 +20,7 @@ const Shopping_cart = () => {
   return (
     <section className="shopping_cart">
       <span
-        onClick={() => {
+        onClick={(e) => {
           handle_open_shopping_cart();
         }}
       >

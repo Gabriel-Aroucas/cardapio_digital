@@ -5,19 +5,25 @@ import "./style.css";
 import "../globalcss/globals.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSquarePlus } from "@fortawesome/free-solid-svg-icons";
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 //export const metadata = {
 //  title: "Menu",
 //};
 
-export const ProductContext = createContext([{}]);
+export const ProductContext = createContext({});
 
+const main_title = "Menu";
 const Menu = () => {
-  const [productState, setProductState] = useState([{}]);
+  const [productState, setProductState] = useState({});
+
+  useEffect(()=>{
+    // rename browser title
+    {(document.title = main_title)}
+  },[])
   return (
     <>
       <ProductContext.Provider value={productState}>
-        <Header title="Menu" />
+        <Header title={main_title} />
       </ProductContext.Provider>
 
       <main>
@@ -31,7 +37,11 @@ const Menu = () => {
                 R$ {item.price}
                 <span
                   onClick={() => {
-                    setProductState([{"t":"t"}]);
+                    setProductState({
+                      product: item.product,
+                      content: item.content,
+                      price: item.price,
+                    });
                   }}
                 >
                   <FontAwesomeIcon icon={faSquarePlus} />
