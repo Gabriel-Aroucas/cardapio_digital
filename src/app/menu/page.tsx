@@ -10,16 +10,20 @@ import { createContext, useEffect, useState } from "react";
 //  title: "Menu",
 //};
 
-export const ProductContext = createContext({});
+export const ProductContext = createContext([{}]);
 
 const main_title = "Menu";
 const Menu = () => {
-  const [productState, setProductState] = useState({});
+  
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const [productState, setProductState] = useState([{}]);
 
-  useEffect(()=>{
-    // rename browser title
-    {(document.title = main_title)}
-  },[])
+  useEffect(() => {
+    // rename browser
+    {
+      document.title = main_title;
+    }
+  }, []);
   return (
     <>
       <ProductContext.Provider value={productState}>
@@ -37,11 +41,16 @@ const Menu = () => {
                 R$ {item.price}
                 <span
                   onClick={() => {
-                    setProductState({
-                      product: item.product,
-                      content: item.content,
-                      price: item.price,
-                    });
+                    setProductState([
+                      ...productState,
+                      {
+                        product: item.product,
+                        content: item.content,
+                        price: item.price,
+                        id:item.id
+                      },
+
+                    ]);
                   }}
                 >
                   <FontAwesomeIcon icon={faSquarePlus} />

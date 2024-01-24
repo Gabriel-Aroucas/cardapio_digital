@@ -7,6 +7,10 @@ import "./Shopping_cart.css";
 
 const Shopping_cart = () => {
   const product_info = useContext(ProductContext);
+  //empty default state
+  delete product_info[0];
+
+  console.log(product_info);
 
   const handle_open_shopping_cart = () => {
     const content = document.querySelector(".content") as HTMLElement;
@@ -38,11 +42,14 @@ const Shopping_cart = () => {
         <h1>Carrinho de compras</h1>
         <div className="items">
           <ul>
-                <li>
-                  <strong>teste</strong> -{" "}
-                  <span>R$ 10</span> <span>2</span>
+            {product_info.map(({price,product,id}:any) => {
+              return (
+                <li key={id}>
+                  <strong>{product}</strong> -<span>R$ {price}</span> <span>2</span>
                   <span className="remove_button">x</span>
                 </li>
+              );
+            })}
           </ul>
           <div className="price">
             <p>
