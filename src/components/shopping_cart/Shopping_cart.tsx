@@ -49,7 +49,10 @@ const Shopping_cart = () => {
                   <span className="remove_button">x</span>
                 </li>
               );
-            })}
+            })
+            }
+            {product_info.length == 1 && <li>Seu carrinho está vazio ☹️</li> }
+
           </ul>
           <div className="price">
             <p>
